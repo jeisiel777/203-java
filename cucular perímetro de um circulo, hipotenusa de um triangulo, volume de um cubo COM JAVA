@@ -1,0 +1,152 @@
+import java.util.Scanner; 
+ 
+ 
+public class Main { 
+    public static void main(String[] args) { 
+        Scanner scan = new Scanner(System.in); 
+        String sair = "s"; 
+        if(1 == 1){ 
+            int resp; 
+            System.out.println("o que voce gostaria de consular" + 
+                    "\n1)hipotenusa de triangulo:" + 
+                    "\n2)volume do cubo: " + 
+                    "\n3)perimetro de um circulo:" + 
+                    "\nsair:"); 
+            resp = scan.nextInt(); 
+            clearScreen(); 
+ 
+            switch (resp) { 
+                case 1: 
+                    int resp1; 
+                    System.out.println("o que você gostaria de consular" + 
+                            "\n1)explicacao" + 
+                            "\n2)calcular"); 
+                    resp1 = scan.nextInt(); 
+ 
+                    switch (resp1){ 
+                        case 1: 
+                            explicacao(1); 
+                            break; 
+                        case 2: 
+                            cauculos(1); 
+                            break; 
+                        default: 
+                            System.out.println("chamada invalida"); 
+                    } 
+                case 2: 
+                    int resp2; 
+                    System.out.println("o que você gostaria de consular" + 
+                            "\n1)explicacao" + 
+                            "\n2)calcular"); 
+                    resp2 = scan.nextInt(); 
+                    switch (resp2){ 
+                        case 1: 
+                            explicacao(2); 
+                            break; 
+                        case 2: 
+                            cauculos(2); 
+                            break; 
+                        default: 
+                            System.out.println("chamada invlida"); 
+                            break; 
+                    } 
+                case 3: 
+                    int resp3; 
+                    System.out.println("o que você gostaria de consular" + 
+                            "\n1)explicacao" + 
+                            "\n2)calcular"); 
+                    resp3 = scan.nextInt(); 
+                    switch (resp3){ 
+                        case 1: 
+                            explicacao(3); 
+                            break; 
+                        case 2: 
+                            cauculos(3); 
+                            break; 
+                        default: 
+                            System.out.println("chamada invalida"); 
+        } 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    } 
+    private static void cauculos(int chamar) { 
+        Scanner scan = new Scanner(System.in); 
+ 
+       switch (chamar){ 
+           case 1: 
+ 
+               int cateto1, cateto2; 
+               double resposta; 
+               System.out.println("informe o primeiro cateto:"); 
+               cateto1 = scan.nextInt(); 
+               System.out.println("informe o valor do segundo cateto:"); 
+               cateto2 = scan.nextInt(); 
+               resposta = Math.sqrt(Math.pow(cateto1 , 2.0)+Math.pow(cateto2, 2.0)); 
+               System.out.printf("sabendo que o primeiro cateto e %d, e o segundo cateto %d " + 
+                       "temos a resposta e %.2f ", cateto1, cateto2, resposta); 
+               break; 
+           case 2: 
+               double resp2; 
+               int calc; 
+               System.out.println("qual a base do cubo?"); 
+               calc = scan.nextInt(); 
+               resp2 =  Math.pow(calc, 3); 
+               System.out.printf("o volume do cubo e %.2f", resp2); 
+               break; 
+           case 3: 
+               int inf; 
+               double resp3; 
+               System.out.println("informe o valor do raio"); 
+               inf = scan.nextInt(); 
+               resp3 = 2 * 3.14 * inf; 
+               System.out.println(resp3); 
+           default: 
+               System.out.println("opcao invalida"); 
+ 
+       } 
+    } 
+    private static void explicacao(int resp) { 
+        Scanner scan = new Scanner(System.in); 
+        switch (resp){ 
+ 
+            case 1: 
+                System.out.println("De acordo com o teorema de Pitágoras, toda hipotenusa" + 
+                        "\né constituída pela soma dos quadrados de cada cateto. Sendo assim, " + 
+                        "\na fórmula mais conhecida para o cálculo da hipotenusa é a" + 
+                        "\nseguinte: a² + b² = c²"); 
+            case 2: 
+                System.out.println("O volume de um cubo é determinado através do produto da área da base " + 
+                        "\npela altura.\n as arestas do cubo possuem medidas iguais, " + 
+                        "\nentão temos que V = Ab * a ou V = a * a * a → V = a³."); 
+            case 3: 
+                System.out.println("Também podemos calcular o perímetro através da fórmula: P = d. π." + 
+                        "\nOnde d é a medida do diâmetro do círculo.\n O diâmetro do círculo também é igual" + 
+                        "\nao diâmetro da circunferência e é igual ao dobro da medida do raio: 2 ."); 
+ 
+        } 
+    } 
+ 
+    public static void clearScreen() { 
+        char esc = 27; 
+        int i = 2; 
+ 
+        String clear = esc + "[2J"; //codigo ansi para limpar a tela 
+        System.out.print(clear); 
+    } 
+} 
+ 
+ 
